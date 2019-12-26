@@ -30,7 +30,7 @@
 	* Make sure both files are executable (chmod +x)
 	* Try running apktool via cli
 * [MITM Proxy - Local man-in-the-middle tool for SSL traffic analysis](https://mitmproxy.org/)
-	* **Description:** MITM Proxy is a tool that can act as a local man in the middle tool for SSL traffic analysis. It was used to monitor requests that the application is being sent and received. This is helpful to discover if a mobile application’s traffic is secure or not.
+	* **Description:** MITM Proxy is a tool that can act as a local man in the middle tool for SSL traffic analysis. It can be used to monitor requests that the application is sending and receiving. This is helpful to discover if a mobile application’s traffic is secure or not as well as blackbox analysis of traffic between applications and backend instances.
 	* `brew install mitmproxy`
 	* [Prepare to install trusted certificates](http://wiki.cacert.org/FAQ/ImportRootCert#Android_Phones_.26_Tablets) so the certificate of MITMProxy is accepted from the Android OS (We believe it must be Android 7 or lower to do this)
 	* Go to [CACert](https://www.cacert.org/index.php?id=3)
@@ -83,7 +83,7 @@
 	* In the same or another terminal, type `drozer console connect`
 
 * [Firebase Scanner](https://github.com/shivsahni/FireBaseScanner)
-	* **Description:** Firebase Scanner is another exploit discovery tool that was used against the mobile application. It specializes in discovering misconfigurations within the mobile application.
+	* **Description:** Firebase Scanner is tool that specializes in discovering misconfigurations within the mobile application's implementation of Firebase backend configurations and instances.
 	* Dependencies
 		* Python 2.7
 	* Installation
@@ -95,14 +95,14 @@
 		* From the repository directory (Where you installed it), type `python FirebaseMisconfig.py -p /<path>/<to>/<apk>/<your.apk>`
 
 * [Frida](https://frida.re/)
-  * **Description:** Frida is a dynamic instrumentation toolkit used to inject code snippets or scripts into native applications to test the security of the applications being examined.
+  * **Description:** Frida is a dynamic instrumentation toolkit used to inject code snippets or scripts into native applications to test the security of the applications being examined, potentially allowing for interaction and inspection between processes.
 
 * [Jarsigner](https://docs.oracle.com/javase/7/docs/technotes/tools/windows/jarsigner.html)
   * **Description:** jarsigner is a tool that comes with Oracle’s Java Development Kit (Java SE). It allows the user to view contents and other information as well as verify the integrity of a Java Archive file. In this case, it was used to verify the integrity of the Nebraska APK.
   * To download and install, click on [Oracle Java Development Kit (JDK)](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
   
 * nm, readelf, objdump
-    * **Description:** <here>
-    * <Where they are located>
+    * **Description:** nm, readelf, and objdump are binaries that are used to inspect compiled binaries. They allow you to look at assembly code, pull strings, look at tables, links, libraries, and inspect debugging symbols, as well as many other uses.
+    * On a linux distribution they are typically in your path. You may use `which`, such as `which objdump` or `which <executable>` to retrieve the path if it exists on your system. If nothing is returned, you would need to install them. objdump, readelf, and nm are a part of `binutils`, you may compile them or grab them from [sourceforge](https://sourceforge.net/projects/mingw/files/MinGW/Base/binutils/binutils-2.28/), but I recommend trying `sudo apt-get install binutils` first. 
 * [OSWASP Zed Attack Proxy (ZAP)](https://github.com/zaproxy/zaproxy/wiki/Downloads)
 	* **Description:** It is a great automation tool used to find security vulnerabilities and flaws when penetration testing
